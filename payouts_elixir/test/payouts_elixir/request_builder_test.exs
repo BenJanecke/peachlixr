@@ -3,7 +3,24 @@ defmodule PayoutsElixir.RequestBuilderTest do
   alias PayoutsElixir.RequestBuilder
 
   describe "build_verification_xml/1" do
-    test "builds valid verification request" do
+    test "builds minimal verification request" do
+      params = %{
+        client_code: "TEST01",
+        account_number: "1234567890",
+        branch_code: "250655"
+      }
+
+      result = RequestBuilder.build_verification_xml(params)
+
+      assert String.contains?(result, "<APIVerificationRequest>")
+      assert String.contains?(result, "<Client>TEST01</Client>")
+      assert String.contains?(result, "<AccountNumber>1234567890</AccountNumber>")
+      assert String.contains?(result, "<BranchCode>250655</BranchCode>")
+      assert String.match?(result, ~r/<Reference>REF\d+<\/Reference>/)
+      assert String.match?(result, ~r/<UniqueId>[0-9a-f-]+<\/UniqueId>/)
+    end
+
+    test "includes all optional verification fields when provided" do
       params = %{
         client_code: "TEST01",
         account_number: "1234567890",
@@ -13,16 +30,18 @@ defmodule PayoutsElixir.RequestBuilderTest do
         name: "John Smith",
         reference: "TEST123",
         service: "BANV",
-        service_type: "SDV"
+        service_type: "SDV",
+        callback_url: "https://example.com/callback"
       }
 
       result = RequestBuilder.build_verification_xml(params)
 
-      assert String.contains?(result, "<APIVerificationRequest>")
-      assert String.contains?(result, "<Client>TEST01</Client>")
-      assert String.contains?(result, "<AccountNumber>1234567890</AccountNumber>")
       assert String.contains?(result, "<Service>BANV</Service>")
       assert String.contains?(result, "<ServiceType>SDV</ServiceType>")
+      assert String.contains?(result, "<CallbackUrl>https://example.com/callback</CallbackUrl>")
+      assert String.contains?(result, "<IdNumber>8603015126082</IdNumber>")
+      assert String.contains?(result, "<Initials>JS</Initials>")
+      assert String.contains?(result, "<Name>John Smith</Name>")
     end
 
     test "generates reference if not provided" do

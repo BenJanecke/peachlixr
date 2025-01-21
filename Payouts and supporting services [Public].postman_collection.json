@@ -1,0 +1,2937 @@
+{
+	"info": {
+		"_postman_id": "158d0b2d-437b-4daf-9ad9-c29f00075121",
+		"name": "Payouts and supporting services [Public]",
+		"description": "The Payouts and supporting services collection offers South African merchants a number of financial services, including:\n\n- **Payouts:** Batch EFT payments\n    \n- **Bank account verification (BANV):** Confirm that bank accounts are valid\n    \n- **Real-time bank account verification (BANVR):** Confirm, in real-time, that bank accounts are valid\n    \n- **Check digit verification (CDV):** Verify bank account numbers against bank-supplied algorithms to determine if the account numbers fall within a valid range for that bank\n    \n- **Beneficiaries:** Securely manage beneficiary accounts\n    \n\n# API endpoints\n\nThe following are the API endpoints for the live and sandbox servers for all the functionality, except beneficiary management:\n\n- Live: `https://www.peachpay.co.za/API/{service}?key={yourkey}`\n    \n- Sandbox: `https://test.peachpay.co.za/API/{service}?key={yourkey}`\n    \n\nFor beneficiary management, the following are the API endpoints for the live and sandbox servers:\n\n- Live: `https://api.peachpay.co.za/`\n    \n- Sandbox: `https://api.test.peachpay.co.za/`\n    \n\n# Prerequisites\n\nEnsure that you have received the following credentials from `support@peachpayments.com`:\n\n- `username`: It resembles `JohSmi01`.\n    \n- `password`: It resembles `73GnZwY6z5cQktz`.\n    \n- `apiKey`: It resembles `3af26eda-223e-4a71-8aa5-b541651fa60z`.\n    \n\nThe username and password are your credentials used to log in to [test.peachpay.co.za](https://test.peachpay.co.za) or [www.peachpay.co.za](https://www.peachpay.co.za).\n\n**Note:** You must be linked to at least one client to use the API.\n\n# Fork the environment and collection\n\nTo fork the environment from the [Peach Payments workspace](https://www.postman.com/peachpayments/workspace/peach-payments-public-workspace/environment/13324425-666c08fa-abb5-4a5d-b800-6e4d68679e2f):\n\n1. Navigate to **Environments**, click **View more actions** next to the **Payouts-Services-Public** environment, and click **Create a fork**.\n    \n2. Enter a fork label, select the workspace to fork to, and click **Fork Environment**.\n    \n\nTo fork the collection from the [Peach Payments workspace](https://www.postman.com/peachpayments/workspace/peach-payments-public-workspace/collection/13324425-158d0b2d-437b-4daf-9ad9-c29f00075121?action=share&creator=20323380):\n\n1. Navigate to **Collections**, click **View more actions** next to the **Payouts and supporting services \\[Public\\]** collection, and click **Create a fork**.\n    \n2. Enter a fork label, select the workspace to fork to, ensure that **Watch original collection** is selected, and click **Fork Collection**.\n    \n\n# Configure the environment\n\nTo get started:\n\n1. In your workspace, navigate to **Environments** and click the forked **Payouts-Services-Public** environment.\n    \n2. Enter the `username`, `password`, and `apiKey` credentials from the **Prerequisites** section above into the **CURRENT VALUE** column.\n    \n3. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n4. Click **Save** in the upper right of the screen.\n    \n\n# Use the Payouts and supporting services API\n\nFor more information on testing the Payouts and supporting services API, see the [documentation hub](https://developer.peachpayments.com/docs/peachpay-overview).\n\n## Initiate a payout\n\n1. In your forked collection, navigate to **Payouts and supporting services \\[Public\\]** > **API** > **POST Payouts**.\n    \n2. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n3. Click **Send**.\n    \n\nThe payout is executed.\n\n## Verify a bank account asynchronously\n\n1. In your forked collection, navigate to **Payouts and supporting services \\[Public\\]** > **API** > **POST Bank Verification - Async**.\n    \n2. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n3. Click **Send**.\n    \n\nThe bank account is verified asynchronously.\n\n## Verify a bank account in real-time\n\n1. In your forked collection, navigate to **Payouts and supporting services \\[Public\\]** > **API** > **POST Bank Verification - RealTime**.\n    \n2. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n3. Click **Send**.\n    \n\nThe bank account is verified in real-time.\n\n## Verify a bank account number\n\nCheck digit verification is included in bank account verification but can also be executed independently.\n\n1. In your forked collection, navigate to **Payouts and supporting services \\[Public\\]** > **API** > **POST CDV**.\n    \n2. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n3. Click **Send**.\n    \n\nThe bank account number is validated against bank-supplied algorithms to determine if the account number falls within a valid range for that bank.\n\n# Use the Beneficiary management API\n\nThe Beneficiary management API enables you to add and search for beneficiaries using either the `payments` or `collections` endpoints.\n\n## Authenticate for beneficiary management\n\nBefore using the Beneficiary management API, you need to authenticate and get an access token.\n\n1. In your forked collection, navigate to **Payouts and supporting services \\[Public\\]** > **api/beneficiaries** > **Authorisation** > **POST Authentication**.\n    \n2. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n3. Click **Send**.\n    \n\nYou're authenticated and the response includes an access token. This Postman collection has been configured to use this access token for subsequent calls.\n\n## Payments endpoint\n\nThis section describes how to use the `payments` endpoint.\n\n### Add beneficiary\n\n1. In your forked collection, navigate to **Payouts and supporting services \\[Public\\]** > **api/beneficiaries** > **payments** > **POST Add Beneficiary**.\n    \n2. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n3. Click **Send**.\n    \n\nThe beneficiary is added.\n\n### Search for beneficiary by client code\n\n1. In your forked collection, navigate to **Payouts and supporting services \\[Public\\]** > **api/beneficiaries** > **payments** > **GET Search Beneficiary by Client**.\n    \n2. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n3. Click **Send**.\n    \n\nThe beneficiary information is returned.\n\n### Search for beneficiary by ID\n\n1. In your forked collection, navigate to **Payouts and supporting services \\[Public\\]** > **api/beneficiaries** > **payments** > **GET Search Beneficiary by ID**.\n    \n2. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n3. Click **Send**.\n    \n\nThe beneficiary information is returned.\n\n## Collections endpoint\n\nThis section describes how to use the `collections` endpoint.\n\n### Add beneficiary\n\n1. In your forked collection, navigate to **Payouts and supporting services \\[Public\\]** > **api/beneficiaries** > **collections** > **POST Add Beneficiary**.\n    \n2. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n3. Click **Send**.\n    \n\nThe beneficiary is added.\n\n### Search for beneficiary by client code\n\n1. In your forked collection, navigate to **Payouts and supporting services \\[Public\\]** > **api/beneficiaries** > **collections** > **GET Search Beneficiary by Client**.\n    \n2. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n3. Click **Send**.\n    \n\nThe beneficiary information is returned.\n\n### Search for beneficiary by ID\n\n1. In your forked collection, navigate to **Payouts and supporting services \\[Public\\]** > **api/beneficiaries** > **collections** > **GET Search Beneficiary by ID**.\n    \n2. Select the **Payouts-Services-Public** option from the environment drop-down list in the upper right of the screen.\n    \n3. Click **Send**.\n    \n\nThe beneficiary information is returned.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "41331005",
+		"_collection_link": "https://www.postman.com/peachpayments/peach-payments-public-workspace/collection/rf7jjj4/payouts-and-supporting-services-public?action=share&source=collection_link&creator=41331005"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "Payouts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"try {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"\r",
+									"} catch (e) { console.error(e) }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "request",
+									"value": "<APIPaymentsRequest>\n    <Header>\n        <PsVer>2.0.1</PsVer>\n        <Client>{{clientCode}}</Client>\n        <Service>{{service}}</Service>\n        <ServiceType>{{serviceType}}</ServiceType>\n        <UniqueId>{{$guid}}</UniqueId>\n        <DueDate>20200917</DueDate>\n        <CallbackUrl>{{callbackUrl}}</CallbackUrl>\n        <Reference>REF{{$randomInt}}</Reference>\n    </Header>\n    <Payments>\n        <FileContents>\n            <Initial>JS</Initial>\n            <FirstName>Joe</FirstName>\n            <Surname>Doe</Surname>\n            <BranchCode>157852</BranchCode>\n            <AccountNumber>1203389809</AccountNumber>\n            <FileAmount>1.00</FileAmount>\n            <AccountType>0</AccountType>\n            <AmountMultiplier>1</AmountMultiplier>\n            <Reference>{{$randomCompanyName}}</Reference>\n        </FileContents>\n    </Payments>\n    <Totals>\n        <Records>1</Records>\n        <Amount>1.00</Amount>\n        <BranchHash>157852</BranchHash>\n        <AccountHash>1203389809</AccountHash>\n    </Totals>\n</APIPaymentsRequest>",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/API/Payments?key={{apiKey}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"API",
+								"Payments"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apiKey}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful - Single file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "request",
+											"value": "<APIPaymentsRequest>\n    <Header>\n        <PsVer>2.0.1</PsVer>\n        <Client>{{clientCode}}</Client>\n        <Service>{{service}}</Service>\n        <ServiceType>{{serviceType}}</ServiceType>\n        <UniqueId>{{$guid}}</UniqueId>\n        <DueDate>20200917</DueDate>\n        <CallbackUrl>{{callbackUrl}}</CallbackUrl>\n        <Reference>REF{{$randomInt}}</Reference>\n    </Header>\n    <Payments>\n        <FileContents>\n            <Initial>JS</Initial>\n            <FirstName>Joe</FirstName>\n            <Surname>Doe</Surname>\n            <BranchCode>157852</BranchCode>\n            <AccountNumber>1203389809</AccountNumber>\n            <FileAmount>1.00</FileAmount>\n            <AccountType>0</AccountType>\n            <AmountMultiplier>1</AmountMultiplier>\n            <Reference>{{$randomCompanyName}}</Reference>\n        </FileContents>\n    </Payments>\n    <Totals>\n        <Records>1</Records>\n        <Amount>1.00</Amount>\n        <BranchHash>157852</BranchHash>\n        <AccountHash>1203389809</AccountHash>\n    </Totals>\n</APIPaymentsRequest>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/API/Payments?key={{apiKey}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"API",
+										"Payments"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private,no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "master-only"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.msecnd.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self' https://dc.services.visualstudio.com *.paysoft.co.za localhost:*"
+								},
+								{
+									"key": "X-Paysoft-Environment",
+									"value": "Test"
+								},
+								{
+									"key": "X-Paysoft-Channel",
+									"value": "Public"
+								},
+								{
+									"key": "X-Paysoft-Deployment-Version",
+									"value": "0.0.1276-public"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 11:22:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "439"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<Response>\n    <Result>OK</Result>\n    <BatchCode>394595</BatchCode>\n    <BatchValueSubmitted>1.00</BatchValueSubmitted>\n    <TotalFeeExcludingVAT>0.00</TotalFeeExcludingVAT>\n    <UniqueId>5b6261df-306d-4663-9f87-a6a490d2cda9</UniqueId>\n    <CDVResults>\n        <Result>\n            <AccountNumber>1203389809</AccountNumber>\n            <BranchCode>157852</BranchCode>\n            <CustomerCode>Hermann - Dietrich</CustomerCode>\n            <Reference>Hermann - Dietrich</Reference>\n            <Result>Valid</Result>\n        </Result>\n    </CDVResults>\n</Response>"
+						},
+						{
+							"name": "Successful - Multiple files",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "request",
+											"value": "<APIPaymentsRequest>\n    <Header>\n        <PsVer>2.0.1</PsVer>\n        <Client>{{clientCode}}</Client>\n        <Service>{{service}}</Service>\n        <ServiceType>{{serviceType}}</ServiceType>\n        <UniqueId>{{$guid}}</UniqueId>\n        <DueDate>20200917</DueDate>\n        <CallbackUrl>{{callbackUrl}}</CallbackUrl>\n        <Reference>REF{{$randomInt}}</Reference>\n    </Header>\n    <Payments>\n        <FileContents>\n            <Initial>JS</Initial>\n            <FirstName>John</FirstName>\n            <Surname>Smith</Surname>\n            <BranchCode>157852</BranchCode>\n            <AccountNumber>1203389809</AccountNumber>\n            <FileAmount>1.00</FileAmount>\n            <AccountType>0</AccountType>\n            <AmountMultiplier>1</AmountMultiplier>\n            <Reference>{{$randomCompanyName}}</Reference>\n        </FileContents>\n        <FileContents>\n            <Initial>JS</Initial>\n            <FirstName>Joe</FirstName>\n            <Surname>Doe</Surname>\n            <BranchCode>157852</BranchCode>\n            <AccountNumber>1203389809</AccountNumber>\n            <FileAmount>1.00</FileAmount>\n            <AccountType>0</AccountType>\n            <AmountMultiplier>1</AmountMultiplier>\n            <Reference>{{$randomCompanyName}}</Reference>\n        </FileContents>\n    </Payments>\n    <Totals>\n        <Records>2</Records>\n        <Amount>2.00</Amount>\n        <BranchHash>315704</BranchHash>\n        <AccountHash>2406779618</AccountHash>\n    </Totals>\n</APIPaymentsRequest>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/API/Payments?key={{apiKey}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"API",
+										"Payments"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private,no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "master-only"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.msecnd.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self' https://dc.services.visualstudio.com *.paysoft.co.za localhost:*"
+								},
+								{
+									"key": "X-Paysoft-Environment",
+									"value": "Test"
+								},
+								{
+									"key": "X-Paysoft-Channel",
+									"value": "Public"
+								},
+								{
+									"key": "X-Paysoft-Deployment-Version",
+									"value": "0.0.1276-public"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 11:22:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "439"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<Response>\n    <Result>OK</Result>\n    <BatchCode>394689</BatchCode>\n    <BatchValueSubmitted>2.00</BatchValueSubmitted>\n    <TotalFeeExcludingVAT>0.00</TotalFeeExcludingVAT>\n    <UniqueId>f86d4274-5ee2-4cd3-b97b-e6db8f892635</UniqueId>\n    <CDVResults>\n        <Result>\n            <AccountNumber>1203389809</AccountNumber>\n            <BranchCode>157852</BranchCode>\n            <CustomerCode>Abernathy LLC</CustomerCode>\n            <Reference>Abernathy LLC</Reference>\n            <Result>Valid</Result>\n        </Result>\n        <Result>\n            <AccountNumber>1203389809</AccountNumber>\n            <BranchCode>157852</BranchCode>\n            <CustomerCode>Hudson - Hettinger</CustomerCode>\n            <Reference>Hudson - Hettinger</Reference>\n            <Result>Valid</Result>\n        </Result>\n    </CDVResults>\n</Response>"
+						},
+						{
+							"name": "Unpaid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "request",
+											"value": "<APIPaymentsRequest>\n    <Header>\n        <PsVer>2.0.1</PsVer>\n        <Client>{{clientCode}}</Client>\n        <Service>{{service}}</Service>\n        <ServiceType>{{serviceType}}</ServiceType>\n        <UniqueId>{{$guid}}</UniqueId>\n        <DueDate>20200917</DueDate>\n        <CallbackUrl>{{callbackUrl}}</CallbackUrl>\n        <Reference>REF{{$randomInt}}</Reference>\n    </Header>\n    <Payments>\n        <FileContents>\n            <Initial>JS</Initial>\n            <FirstName>Joe</FirstName>\n            <Surname>Doe</Surname>\n            <BranchCode>157852</BranchCode>\n            <AccountNumber>1203389809</AccountNumber>\n            <FileAmount>1.00</FileAmount>\n            <AccountType>0</AccountType>\n            <AmountMultiplier>1</AmountMultiplier>\n            <Reference>{{$randomCompanyName}}</Reference>\n        </FileContents>\n    </Payments>\n    <Totals>\n        <Records>1</Records>\n        <Amount>1.00</Amount>\n        <BranchHash>157852</BranchHash>\n        <AccountHash>1203389809</AccountHash>\n    </Totals>\n</APIPaymentsRequest>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/API/Payments?key={{apiKey}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"API",
+										"Payments"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private,no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "master-only"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.msecnd.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self' https://dc.services.visualstudio.com *.paysoft.co.za localhost:*"
+								},
+								{
+									"key": "X-Paysoft-Environment",
+									"value": "Test"
+								},
+								{
+									"key": "X-Paysoft-Channel",
+									"value": "Public"
+								},
+								{
+									"key": "X-Paysoft-Deployment-Version",
+									"value": "0.0.1276-public"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 11:22:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "439"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<Response>\n    <Result>OK</Result>\n    <BatchCode>30104</BatchCode>\n    <PaymentResults>\n        <Result>\n            <AccountNumber>123456789</AccountNumber>\n            <BranchCode>632005</BranchCode>\n            <FirstName>Example</FirstName>\n            <Surname>Callback</Surname>\n            <Reference>SALARY</Reference>\n            <CustomerCode>000001</CustomerCode>\n            <Result>Rejected</Result>\n            <ResultMessage>ACCOUNT CLOSED</ResultMessage>\n        </Result>\n    </PaymentResults>\n</Response>"
+						}
+					]
+				},
+				{
+					"name": "Bank Verification - Async",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"try {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"\r",
+									"} catch (e) { console.error(e) }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "request",
+									"value": "<APIVerificationRequest>\n    <Header>\n        <PsVer>2.0.1</PsVer>\n        <CallBackUrl>{{$randomUrl}}</CallBackUrl>\n        <Client>{{clientCode}}</Client>\n        <Reference>REF{{$randomInt}}</Reference>\n        <Service>BANV</Service>\n        <ServiceType>SDV</ServiceType>\n        <UniqueId>{{$guid}}</UniqueId>\n    </Header>\n    <Records>\n        <FileContents>\n            <AccountNumber>62075767669</AccountNumber>\n            <BranchCode>250655</BranchCode>\n            <IdNumber>8603015126082</IdNumber>\n            <Initials>J</Initials>\n            <Name>Doe</Name>\n            <Reference>REF{{$randomInt}}</Reference>\n        </FileContents>\n    </Records>\n    <Totals>\n        <AccountHash>62075767669</AccountHash>\n        <BranchHash>250655</BranchHash>\n        <Records>1</Records>\n    </Totals>\n</APIVerificationRequest>",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/API/Verification?key={{apiKey}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"API",
+								"Verification"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apiKey}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful - Single file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "request",
+											"value": "<APIVerificationRequest>\n    <Header>\n        <PsVer>2.0.1</PsVer>\n        <CallBackUrl>{{$randomUrl}}</CallBackUrl>\n        <Client>{{clientCode}}</Client>\n        <Reference>REF{{$randomInt}}</Reference>\n        <Service>BANV</Service>\n        <ServiceType>SDV</ServiceType>\n        <UniqueId>{{$guid}}</UniqueId>\n    </Header>\n    <Records>\n        <FileContents>\n            <AccountNumber>62075767669</AccountNumber>\n            <BranchCode>250655</BranchCode>\n            <IdNumber>8603015126082</IdNumber>\n            <Initials>J</Initials>\n            <Name>Doe</Name>\n            <Reference>REF{{$randomInt}}</Reference>\n        </FileContents>\n    </Records>\n    <Totals>\n        <AccountHash>62075767669</AccountHash>\n        <BranchHash>250655</BranchHash>\n        <Records>1</Records>\n    </Totals>\n</APIVerificationRequest>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/API/Verification?key={{apiKey}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"API",
+										"Verification"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private,no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "master-only"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.msecnd.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self' https://dc.services.visualstudio.com *.paysoft.co.za localhost:*"
+								},
+								{
+									"key": "X-Paysoft-Environment",
+									"value": "Test"
+								},
+								{
+									"key": "X-Paysoft-Channel",
+									"value": "Public"
+								},
+								{
+									"key": "X-Paysoft-Deployment-Version",
+									"value": "0.0.1276-public"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 11:25:46 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "416"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<Response>\n    <Result>OK</Result>\n    <BatchCode>394596</BatchCode>\n    <TotalFeeExcludingVAT>3.95</TotalFeeExcludingVAT>\n    <UniqueId>ae62d9d7-0166-4dc0-a8d8-875286665683</UniqueId>\n    <CDVResults>\n        <Result>\n            <AccountNumber>62075767669</AccountNumber>\n            <BranchCode>250655</BranchCode>\n            <CustomerCode>REF198</CustomerCode>\n            <Reference>REF198</Reference>\n            <Result>Valid</Result>\n        </Result>\n    </CDVResults>\n</Response>"
+						},
+						{
+							"name": "Successful - Multiple files",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "request",
+											"value": "<APIVerificationRequest>\n    <Header>\n        <PsVer>2.0.1</PsVer>\n        <CallBackUrl>{{$randomUrl}}</CallBackUrl>\n        <Client>{{clientCode}}</Client>\n        <Reference>REF{{$randomInt}}</Reference>\n        <Service>BANV</Service>\n        <ServiceType>SDV</ServiceType>\n        <UniqueId>{{$guid}}</UniqueId>\n    </Header>\n    <Records>\n        <FileContents>\n            <AccountNumber>62075767669</AccountNumber>\n            <BranchCode>250655</BranchCode>\n            <IdNumber>8603015126082</IdNumber>\n            <Initials>J</Initials>\n            <Name>Doe</Name>\n            <Reference>REF{{$randomInt}}</Reference>\n        </FileContents>\n        <FileContents>\n            <AccountNumber>62075767669</AccountNumber>\n            <BranchCode>250655</BranchCode>\n            <IdNumber>8603015126082</IdNumber>\n            <Initials>J</Initials>\n            <Name>Smith</Name>\n            <Reference>REF{{$randomInt}}</Reference>\n        </FileContents>\n    </Records>\n    <Totals>\n        <AccountHash>124151535338</AccountHash>\n        <BranchHash>501310</BranchHash>\n        <Records>2</Records>\n    </Totals>\n</APIVerificationRequest>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/API/Verification?key={{apiKey}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"API",
+										"Verification"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private,no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "master-only"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.msecnd.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self' https://dc.services.visualstudio.com *.paysoft.co.za localhost:*"
+								},
+								{
+									"key": "X-Paysoft-Environment",
+									"value": "Test"
+								},
+								{
+									"key": "X-Paysoft-Channel",
+									"value": "Public"
+								},
+								{
+									"key": "X-Paysoft-Deployment-Version",
+									"value": "0.0.1276-public"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 11:25:46 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "416"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<Response>\n    <Result>OK</Result>\n    <BatchCode>394694</BatchCode>\n    <TotalFeeExcludingVAT>7.90</TotalFeeExcludingVAT>\n    <UniqueId>e47ebdd2-2d9b-4b16-b937-822476dd09c4</UniqueId>\n    <CDVResults>\n        <Result>\n            <AccountNumber>62075767669</AccountNumber>\n            <BranchCode>250655</BranchCode>\n            <CustomerCode>REF433</CustomerCode>\n            <Reference>REF433</Reference>\n            <Result>Valid</Result>\n        </Result>\n        <Result>\n            <AccountNumber>62075767669</AccountNumber>\n            <BranchCode>250655</BranchCode>\n            <CustomerCode>REF30</CustomerCode>\n            <Reference>REF30</Reference>\n            <Result>Valid</Result>\n        </Result>\n    </CDVResults>\n</Response>"
+						},
+						{
+							"name": "Validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "request",
+											"value": "<APIVerificationRequest>\n    <Header>\n        <PsVer>2.0.1</PsVer>\n        <CallBackUrl>{{$randomUrl}}</CallBackUrl>\n        <Client>{{clientCode}}</Client>\n        <Reference>REF{{$randomInt}}</Reference>\n        <Service>BANV</Service>\n        <ServiceType>SDV</ServiceType>\n        <UniqueId>{{$guid}}</UniqueId>\n    </Header>\n    <Records>\n        <FileContents>\n            <AccountNumber>62075767669</AccountNumber>\n            <BranchCode>250655</BranchCode>\n            <IdNumber>8603015126082</IdNumber>\n            <Initials>RM</Initials>\n            <Name>Rudolf</Name>\n            <Reference>REF{{$randomInt}}</Reference>\n        </FileContents>\n    </Records>\n    <Totals>\n        <AccountHash>62075767669</AccountHash>\n        <BranchHash>250655</BranchHash>\n        <Records>1</Records>\n    </Totals>\n</APIVerificationRequest>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/API/Verification?key={{apiKey}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"API",
+										"Verification"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private,no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "master-only"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.msecnd.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self' https://dc.services.visualstudio.com *.paysoft.co.za localhost:*"
+								},
+								{
+									"key": "X-Paysoft-Environment",
+									"value": "Test"
+								},
+								{
+									"key": "X-Paysoft-Channel",
+									"value": "Public"
+								},
+								{
+									"key": "X-Paysoft-Deployment-Version",
+									"value": "0.0.1276-public"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 11:25:46 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "416"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<Response>\n  <Result>OK</Result>\n  <BatchCode>34477</BatchCode>\n  <BanvResults>\n    <Result>\n      <AccountNumber>123456789101</AccountNumber>\n      <IDNumber>5511255173005</IDNumber>\n      <Initials>EX</Initials>\n      <Name>Example Name</Name>\n      <Reference>5621-123456789101</Reference>\n      <Flags>YYNNYYYY</Flags>\n      <Result>\n        A/c exists, ID matches, Inits don't match, Name doesn't match, A/c open, accepts Dr, accepts Cr & open more than 3 months\n      </Result>\n    </Result>\n  </BanvResults>\n</Response>"
+						}
+					]
+				},
+				{
+					"name": "Bank Verification - RealTime",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"try {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"\r",
+									"} catch (e) { console.error(e) }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "request",
+									"value": "<APIRealTimeVerificationRequest>\n    <Header>\n        <PsVer>2.0.1</PsVer>\n        <Client>{{clientCode}}</Client>\n        <Reference>REF{{$randomInt}}</Reference>\n        <CallBackUrl>{{callbackUrl}}</CallBackUrl>\n    </Header>\n    <Records>\n        <FileContents>\n            <Name>Peach</Name>\n            <IdNumber>2133445555</IdNumber>\n            <AccountNumber>1021278653</AccountNumber>\n            <Reference>REF{{$randomInt}}</Reference>\n            <BranchCode>198765</BranchCode>\n        </FileContents>\n    </Records>\n    <Totals>\n        <Records>1</Records>\n        <BranchHash>198765</BranchHash>\n        <AccountHash>1021278653</AccountHash>\n    </Totals>\n</APIRealTimeVerificationRequest>",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/API/RealtimeVerification?key={{apiKey}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"API",
+								"RealtimeVerification"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apiKey}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "request",
+											"value": "<APIRealTimeVerificationRequest>\n    <Header>\n        <PsVer>2.0.1</PsVer>\n        <Client>{{clientCode}}</Client>\n        <Reference>REF{{$randomInt}}</Reference>\n        <CallBackUrl>{{callbackUrl}}</CallBackUrl>\n    </Header>\n    <Records>\n        <FileContents>\n            <Name>Peach</Name>\n            <IdNumber>2133445555</IdNumber>\n            <AccountNumber>1021278653</AccountNumber>\n            <Reference>REF{{$randomInt}}</Reference>\n            <BranchCode>198765</BranchCode>\n        </FileContents>\n    </Records>\n    <Totals>\n        <Records>1</Records>\n        <BranchHash>198765</BranchHash>\n        <AccountHash>1021278653</AccountHash>\n    </Totals>\n</APIRealTimeVerificationRequest>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/API/RealtimeVerification?key={{apiKey}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"API",
+										"RealtimeVerification"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private,no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "master-only"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.msecnd.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self' https://dc.services.visualstudio.com *.paysoft.co.za localhost:*"
+								},
+								{
+									"key": "X-Paysoft-Environment",
+									"value": "Test"
+								},
+								{
+									"key": "X-Paysoft-Channel",
+									"value": "Public"
+								},
+								{
+									"key": "X-Paysoft-Deployment-Version",
+									"value": "0.0.1276-public"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 11:17:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "482"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<Response>\n    <Result>OK</Result>\n    <BatchCode>394593</BatchCode>\n    <TotalFeeExcludingVAT>3.95</TotalFeeExcludingVAT>\n    <BanvRealtimeResult>\n        <AccountNumber>1021278653</AccountNumber>\n        <AccountType>Unknown</AccountType>\n        <Flags>U</Flags>\n        <IDNumber>2133445555</IDNumber>\n        <Initials></Initials>\n        <Name>PEACH</Name>\n        <Reference>REF200</Reference>\n        <Result>Unprocessed</Result>\n    </BanvRealtimeResult>\n    <CDVResults>\n        <Result>\n            <AccountNumber>1021278653</AccountNumber>\n            <BranchCode>198765</BranchCode>\n            <CustomerCode>REF200</CustomerCode>\n            <Reference>REF200</Reference>\n            <Result>Valid</Result>\n        </Result>\n    </CDVResults>\n</Response>"
+						},
+						{
+							"name": "Validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "request",
+											"value": "<APIRealTimeVerificationRequest>\n    <Header>\n        <PsVer>2.0.1</PsVer>\n        <Client>{{clientCode}}</Client>\n        <Reference>REF{{$randomInt}}</Reference>\n        <CallBackUrl>{{callbackUrl}}</CallBackUrl>\n    </Header>\n    <Records>\n        <FileContents>\n            <Name>Peach</Name>\n            <IdNumber>2133445555</IdNumber>\n            <AccountNumber>1021278653</AccountNumber>\n            <Reference>REF{{$randomInt}}</Reference>\n            <BranchCode>198765</BranchCode>\n        </FileContents>\n    </Records>\n    <Totals>\n        <Records>1</Records>\n        <BranchHash>198765</BranchHash>\n        <AccountHash>1021278653</AccountHash>\n    </Totals>\n</APIRealTimeVerificationRequest>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/API/RealtimeVerification?key={{apiKey}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"API",
+										"RealtimeVerification"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private,no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "master-only"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.msecnd.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self' https://dc.services.visualstudio.com *.paysoft.co.za localhost:*"
+								},
+								{
+									"key": "X-Paysoft-Environment",
+									"value": "Test"
+								},
+								{
+									"key": "X-Paysoft-Channel",
+									"value": "Public"
+								},
+								{
+									"key": "X-Paysoft-Deployment-Version",
+									"value": "0.0.1276-public"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 11:17:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "482"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<Response>\n  <Result>OK</Result>\n  <BatchCode>35308</BatchCode>\n  <TotalFeeExcludingVAT>0.00</TotalFeeExcludingVAT>\n  <BanvRealtimeResult>\n    <AccountNumber>1021278653</AccountNumber>\n    <IDNumber>4012155047088</IDNumber>\n    <Initials>A</Initials>\n    <Name>BARISHMAN</Name>\n    <Reference>12345</Reference>\n    <Flags>YYYNYYYY</Flags>\n    <Result>A/c exists, ID matches, Inits matches, Name doesn't match, A/c open, accepts Dr, accepts Cr &amp; open more than 3 months</Result>\n  </BanvRealtimeResult>\n  <CDVResults>\n    <Result>\n      <Result>Valid</Result>\n      <AccountNumber>1021278653</AccountNumber>\n      <BranchCode>198765</BranchCode>\n      <Reference>12345</Reference>\n      <CustomerCode>C12345C</CustomerCode>\n    </Result>\n  </CDVResults>\n</Response>"
+						}
+					]
+				},
+				{
+					"name": "CDV",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"try {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"\r",
+									"} catch (e) { console.error(e) }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "request",
+									"value": "<APICDVRequest>\n<Header>\n<Client>{{clientCode}}</Client>\n<PsVer>2.0.1</PsVer>\n    <Reference>REF{{$randomInt}}</Reference>\n    <Service>CDV</Service>\n</Header>\n<Records>\n    <FileContents>\n        <AccountNumber>62553059942</AccountNumber>\n        <BranchCode>211020</BranchCode>\n    </FileContents>\n</Records>\n<Totals>\n    <AccountHash>62553059942</AccountHash>\n    <BranchHash>211020</BranchHash>\n    <Records>1</Records>\n</Totals>\n</APICDVRequest>",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/API/CDV?key={{apiKey}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"API",
+								"CDV"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apiKey}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful - Single file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "request",
+											"value": "<APICDVRequest>\n<Header>\n<Client>{{clientCode}}</Client>\n<PsVer>2.0.1</PsVer>\n    <Reference>REF{{$randomInt}}</Reference>\n    <Service>CDV</Service>\n</Header>\n<Records>\n    <FileContents>\n        <AccountNumber>62553059942</AccountNumber>\n        <BranchCode>211020</BranchCode>\n    </FileContents>\n</Records>\n<Totals>\n    <AccountHash>62553059942</AccountHash>\n    <BranchHash>211020</BranchHash>\n    <Records>1</Records>\n</Totals>\n</APICDVRequest>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/API/CDV?key={{apiKey}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"API",
+										"CDV"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private,no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "master-only"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.msecnd.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self' https://dc.services.visualstudio.com *.paysoft.co.za localhost:*"
+								},
+								{
+									"key": "X-Paysoft-Environment",
+									"value": "Test"
+								},
+								{
+									"key": "X-Paysoft-Channel",
+									"value": "Public"
+								},
+								{
+									"key": "X-Paysoft-Deployment-Version",
+									"value": "0.0.1276-public"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 11:33:01 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "319"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<Response>\n    <Result>OK</Result>\n    <BatchCode></BatchCode>\n    <TotalFeeExcludingVAT>0</TotalFeeExcludingVAT>\n    <CDVResults>\n        <Result>\n            <AccountNumber>62553059942</AccountNumber>\n            <BranchCode>211020</BranchCode>\n            <Result>Valid</Result>\n        </Result>\n    </CDVResults>\n</Response>"
+						},
+						{
+							"name": "Successful - Multiple files",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "request",
+											"value": "<APICDVRequest>\n<Header>\n<Client>{{clientCode}}</Client>\n<PsVer>2.0.1</PsVer>\n    <Reference>REF{{$randomInt}}</Reference>\n    <Service>CDV</Service>\n</Header>\n<Records>\n    <FileContents>\n        <AccountNumber>62553059942</AccountNumber>\n        <BranchCode>211020</BranchCode>\n    </FileContents>\n    <FileContents>\n        <AccountNumber>62553059942</AccountNumber>\n        <BranchCode>211020</BranchCode>\n    </FileContents>\n</Records>\n<Totals>\n    <AccountHash>125106119884</AccountHash>\n    <BranchHash>422040</BranchHash>\n    <Records>2</Records>\n</Totals>\n</APICDVRequest>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/API/CDV?key={{apiKey}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"API",
+										"CDV"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private,no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "master-only"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.msecnd.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self' https://dc.services.visualstudio.com *.paysoft.co.za localhost:*"
+								},
+								{
+									"key": "X-Paysoft-Environment",
+									"value": "Test"
+								},
+								{
+									"key": "X-Paysoft-Channel",
+									"value": "Public"
+								},
+								{
+									"key": "X-Paysoft-Deployment-Version",
+									"value": "0.0.1276-public"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 11:33:01 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "319"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<Response>\n    <Result>OK</Result>\n    <BatchCode></BatchCode>\n    <TotalFeeExcludingVAT>0</TotalFeeExcludingVAT>\n    <CDVResults>\n        <Result>\n            <AccountNumber>62553059942</AccountNumber>\n            <BranchCode>211020</BranchCode>\n            <Result>Valid</Result>\n        </Result>\n        <Result>\n            <AccountNumber>62553059942</AccountNumber>\n            <BranchCode>211020</BranchCode>\n            <Result>Valid</Result>\n        </Result>\n    </CDVResults>\n</Response>"
+						},
+						{
+							"name": "Validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "request",
+											"value": "<APICDVRequest>\n<Header>\n<Client>{{clientCode}}</Client>\n<PsVer>2.0.1</PsVer>\n    <Reference>REF{{$randomInt}}</Reference>\n    <Service>CDV</Service>\n</Header>\n<Records>\n    <FileContents>\n        <AccountNumber>62553059942</AccountNumber>\n        <BranchCode>211020</BranchCode>\n    </FileContents>\n</Records>\n<Totals>\n    <AccountHash>62553059942</AccountHash>\n    <BranchHash>211020</BranchHash>\n    <Records>1</Records>\n</Totals>\n</APICDVRequest>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/API/CDV?key={{apiKey}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"API",
+										"CDV"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private,no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=Edge,chrome=1"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "master-only"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.msecnd.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; object-src 'none'; connect-src 'self' https://dc.services.visualstudio.com *.paysoft.co.za localhost:*"
+								},
+								{
+									"key": "X-Paysoft-Environment",
+									"value": "Test"
+								},
+								{
+									"key": "X-Paysoft-Channel",
+									"value": "Public"
+								},
+								{
+									"key": "X-Paysoft-Deployment-Version",
+									"value": "0.0.1276-public"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 11:33:01 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "319"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<Response>\n  <Result>OK</Result>\n  <BatchCode></BatchCode>\n  <TotalFeeExcludingVAT>0</TotalFeeExcludingVAT>\n  <UniqueId>12345443</UniqueId>\n  <CDVResults>\n    <Result>\n      <Result>Invalid</Result>\n      <Message>Account number is not valid for ABSA Bank.</Message>\n      <AccountNumber>1234567891</AccountNumber>\n      <BranchCode>632005</BranchCode>\n      <Reference>Example 1</Reference>\n    </Result>\n  </CDVResults>\n</Response>"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "api/beneficiaries",
+			"item": [
+				{
+					"name": "Authorisation",
+					"item": [
+						{
+							"name": "Authentication",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"try {\r",
+											"    if (pm.response.code != 200) {\r",
+											"        console.error(\"Invalid User Authentication Credentials\");\r",
+											"        throw new Error(\"Invalid User Authentication Credentials\");\r",
+											"    } else {\r",
+											"        var jsonData = pm.response.json();\r",
+											"        //from 0Auth 2.0 response\r",
+											"        pm.environment.set(\"accessToken\", jsonData.access_token);\r",
+											"    }\r",
+											"} catch (e) { console.error(e) }"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{beneficiaryUrl}}/token"
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "username",
+													"value": "{{username}}",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "{{password}}",
+													"type": "text"
+												},
+												{
+													"key": "grant_type",
+													"value": "password",
+													"type": "text"
+												}
+											]
+										},
+										"url": "{{beneficiaryUrl}}/token"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=UTF-8"
+										},
+										{
+											"key": "Expires",
+											"value": "-1"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 26 Sep 2022 11:36:43 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "471"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"access_token\": \"UBgdYPndYrTRCcqqQD7XysM2KaqXijpaB6PUams_nmTyb34EzS1eDtLDX9aO_6vG5wGK3nWJpO8gmtD4Tzwr9aoBuxGHHDekQOZbaLwXdlg-DJm4ZG0z7jd3BezRKrRoFVk1_sC98JUbNO7MzTExln25z2G7K_IlqsaEQMNqhBwjjoqtvrIwArZ4yhRPsVdqVilKwWRt_vOP6iqtL95ku-diCL_6y0PLgCPlcM1UguFoFqXSy3W9KfTLUBLWJ_PGGddXQ6SHT3k-BGPATK3s0xd1fTB240esDypkYXjoNnsxJAxUjU7F1fyN1kp9rBM-IqDNqmHy3-DTT-XqcBPsNbGj6BXIVxn4xOCQmyR-96t4e4Vr4L4i0KLST1mQ8SwQ32K70VHfNx-afe4OKVAT3KDlPUU\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 86399\n}"
+								},
+								{
+									"name": "Validation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "username",
+													"value": "{{username}}",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123",
+													"type": "text"
+												},
+												{
+													"key": "grant_type",
+													"value": "password",
+													"type": "text"
+												}
+											]
+										},
+										"url": "{{beneficiaryUrl}}/token"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=UTF-8"
+										},
+										{
+											"key": "Expires",
+											"value": "-1"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 26 Sep 2022 11:37:04 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "87"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": \"invalid_grant\",\n    \"error_description\": \"The user name or password is incorrect.\"\n}"
+								}
+							]
+						}
+					],
+					"auth": {
+						"type": "noauth"
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "payments",
+					"item": [
+						{
+							"name": "Add Beneficiary",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"try {\r",
+											"\r",
+											"    if (pm.response.code == 200) {\r",
+											"        var jsonData = pm.response.json();\r",
+											"\r",
+											"        //from Add Beneficiary response\r",
+											"        pm.collectionVariables.set(\"beneficiaryId\", jsonData.id)\r",
+											"        pm.collectionVariables.set(\"beneficiaryToken\", jsonData.tokenHash)\r",
+											"    }\r",
+											"\r",
+											"} catch (e) { console.error(e) }"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"accountNumber\": \"123456789\",\n    \"amount\": null,\n    \"branchCode\": \"632005\",\n    \"clientCode\": \"PP{{clientCode}}\",\n    \"clientName\": \"{{clientName}}\",\n    \"customerCode\": \"{{$randomInt}}\",\n    \"id\": null,\n    \"isActive\": true,\n    \"name\": \"{{$randomFullName}}\",\n    \"reference\": \"{{$timestamp}}\",\n    \"scheculeType\": 0,\n    \"serviceCode\": \"DEBORD\"\n}"
+								},
+								"url": "{{beneficiaryUrl}}/api/beneficiaries/payments"
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"accountNumber\": \"123456789\",\n    \"amount\": null,\n    \"branchCode\": \"632005\",\n    \"clientCode\": \"PP{{clientCode}}\",\n    \"clientName\": \"{{clientName}}\",\n    \"customerCode\": \"{{$randomInt}}\",\n    \"id\": null,\n    \"isActive\": true,\n    \"name\": \"{{$randomFullName}}\",\n    \"reference\": \"{{$timestamp}}\",\n    \"scheculeType\": 0,\n    \"serviceCode\": \"DEBORD\"\n}"
+										},
+										"url": "{{beneficiaryUrl}}/api/beneficiaries/payments"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 26 Sep 2022 13:15:07 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "514"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"accountNumber\": \"123456789\",\n    \"bankName\": \"\",\n    \"branchCode\": \"632005\",\n    \"debitDay\": null,\n    \"debitMonth\": null,\n    \"trackingDays\": null,\n    \"accountType\": 0,\n    \"amount\": null,\n    \"clientCode\": \"PPPPQA\",\n    \"clientName\": \"Peach Payments QA\",\n    \"customerCode\": \"651\",\n    \"endDate\": null,\n    \"id\": \"093082197131051029021186031161076200118079150022\",\n    \"installments\": null,\n    \"isActive\": true,\n    \"name\": \"Mrs. Van Corwin\",\n    \"recurringPeriod\": 0,\n    \"reference\": \"1664198108\",\n    \"scheduleType\": 0,\n    \"serviceCode\": \"DEBORD\",\n    \"startDate\": null,\n    \"tokenHash\": \"B8195B923B679551AD322FE59AD5D1300274E557\"\n}"
+								},
+								{
+									"name": "Validation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"accountNumber\": \"\",\n    \"amount\": null,\n    \"branchCode\": \"632005\",\n    \"clientCode\": \"PP{{clientCode}}\",\n    \"clientName\": \"{{clientName}}\",\n    \"customerCode\": \"{{$randomInt}}\",\n    \"id\": null,\n    \"isActive\": true,\n    \"name\": \"{{$randomFullName}}\",\n    \"reference\": \"{{$timestamp}}\",\n    \"scheculeType\": 0,\n    \"serviceCode\": \"DEBORD\"\n}"
+										},
+										"url": "{{beneficiaryUrl}}/api/beneficiaries/payments"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 30 Sep 2022 14:12:46 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "187"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"The request is invalid.\",\n    \"modelState\": {\n        \"accountNumber\": [\n            \"The Account number is required.\"\n        ],\n        \"beneficiary.CDVCheck\": [\n            \"The account number and branch code failed the CDV test.\"\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Search Beneficiary by Client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"try {\r",
+											"    var jsonData = pm.response.json();\r",
+											"\r",
+											"\r",
+											"} catch (e) { console.error(e) }"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{beneficiaryUrl}}/api/beneficiaries/payments/?client=PP{{clientCode}}&service={{serviceCode}}&page=1&pageSize=20",
+									"host": [
+										"{{beneficiaryUrl}}"
+									],
+									"path": [
+										"api",
+										"beneficiaries",
+										"payments",
+										""
+									],
+									"query": [
+										{
+											"key": "client",
+											"value": "PP{{clientCode}}"
+										},
+										{
+											"key": "service",
+											"value": "{{serviceCode}}",
+											"description": "DEBORD | PPREFTSAL | PPREFTCRE | PPREFTWAG"
+										},
+										{
+											"key": "query",
+											"value": "example",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{beneficiaryUrl}}/api/beneficiaries/payments/?client=PP{{clientCode}}&service={{serviceCode}}&page=1&pageSize=20",
+											"host": [
+												"{{beneficiaryUrl}}"
+											],
+											"path": [
+												"api",
+												"beneficiaries",
+												"payments",
+												""
+											],
+											"query": [
+												{
+													"key": "client",
+													"value": "PP{{clientCode}}"
+												},
+												{
+													"key": "service",
+													"value": "{{serviceCode}}",
+													"description": "DEBORD | PPREFTSAL | PPREFTCRE | PPREFTWAG"
+												},
+												{
+													"key": "query",
+													"value": "example",
+													"disabled": true
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "pageSize",
+													"value": "20"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 30 Sep 2022 14:13:08 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "9761"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"pageData\": {\n        \"nextPageNumber\": \"2\",\n        \"pageCount\": 13,\n        \"pageNumber\": 1,\n        \"pages\": [\n            {\n                \"cssClass\": \"currentPage\",\n                \"pageNumber\": \"1\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"2\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"3\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"4\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"5\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"6\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"7\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"8\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"9\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"10\",\n                \"pageUrl\": null\n            }\n        ],\n        \"pageSize\": 20,\n        \"previousPageNumber\": null,\n        \"showNextPage\": true,\n        \"showPreviousPage\": false,\n        \"totalResults\": 256\n    },\n    \"results\": [\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 100,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2006\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"236254171067071241144027185019132202029072112228\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2006\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"A9DB35243F9AECEF73A9205DB07D417539A93AB8\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 100,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2006\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"075019012069185226108022125221224184225231191036\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2006\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"C5B99B4A7C4F6D45A52D23215659A8A303C6D0DA\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 179.32,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2340\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"088017200204176240134170225240084040218191130156\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2340\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"ED77F906D4F9D76F1DDB216F517B6E65BDB3D873\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 179.32,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2340\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"078175090205244151226171022168082029045012059163\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2340\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"C483022692E6916303154B083BBDD1068DAEE51C\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 179.32,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2340\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"138052183001073223158080069214056211032087050158\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2340\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"13A0B846563D3298D44CA0E2A4170AB6B6A5904E\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 179.32,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2340\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"254023057243032218007109255064205204133063223218\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2340\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"5ED0BAFA74FC4CC350EB4645970E876C73640AA6\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 179.32,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2340\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"177218205115063018168188238136060162018063090048\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2340\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"BD000447DFE18BB4AAC91F28B89DCC5CB9EBBBB3\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2516\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"166238014039191208117126016067150006240183052198\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2516\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"76BC72A80B7D6A15E13FB87DF0528AA8963CDDF7\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2533\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"211027017226187002064160199050212202054201046172\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2533\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"7F58FF01C1A031F408703F25F6C3797718E200DF\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2537\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"222040013025055213192039095046205075182156206000\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2537\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"C047FF66E79776DD7BD0A01448ABC1E579779C3C\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 178.56,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2540\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"143236021191048057189140010173019163059129255046\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2540\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"C07FCA3030E54FE73DABDFCF7ED6B806A57E18BB\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 178.56,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2540\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"182196163198250244173171033086216130042255077230\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2540\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"87E5356AC906E43F6D0FF8B645893AF9D66E6C0C\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 178.56,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2540\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"038000218115088156068153065104230215051160045028\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2540\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"E866FC7A896DD4103B802D21F154A297CD7F4069\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2543\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"203124207247206119191038102023040198243178124121\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2543\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"6E62B30542114FA09035511D299EB308A1A72663\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2557\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"000250153221160222106193241132118210179089160013\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2557\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"95B5955971EAAB5E97E6D0B74CD0582FFD839382\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 0,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2576\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"205032146181201006149088095165084112114164027001\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2576\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"47DD5AE4C63D02FB350C1B52BBCF158495C05335\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 288.89,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2588\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"009146150211164117041035170193107255003171184086\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2588\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"AC0BE1B7BC198B42A6FF6DE07AB03096DA70C30C\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2595\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"128113240237167055000236234231114077225025138238\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2595\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"80BC95980E9DAE8621637568C527534383FAC29C\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 168.58,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2648\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"204234044059255108101086246039227150233161233089\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2648\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"D8C9261F07592F8E1402A63BB477F1DAEDB81383\"\n        },\n        {\n            \"approvedBeneficiaryCode\": null,\n            \"accountType\": 0,\n            \"amount\": 168.58,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2651\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"069183155112096179012027197172133013188109155102\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2651\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"31DD321030105399E181C524AAB2E6B2D213E0B9\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Validation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{beneficiaryUrl}}/api/beneficiaries/payments/?client=PP{{clientCode}}&service=test&page=1&pageSize=20",
+											"host": [
+												"{{beneficiaryUrl}}"
+											],
+											"path": [
+												"api",
+												"beneficiaries",
+												"payments",
+												""
+											],
+											"query": [
+												{
+													"key": "client",
+													"value": "PP{{clientCode}}"
+												},
+												{
+													"key": "service",
+													"value": "test",
+													"description": "DEBORD | PPREFTSAL | PPREFTCRE | PPREFTWAG"
+												},
+												{
+													"key": "query",
+													"value": "example",
+													"disabled": true
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "pageSize",
+													"value": "20"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 30 Sep 2022 14:15:58 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "39"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Invalid service code test\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Search Beneficiary by ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"try {\r",
+											"    var jsonData = pm.response.json();\r",
+											"\r",
+											"\r",
+											"} catch (e) { console.error(e) }"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{beneficiaryUrl}}/api/beneficiaries/payments/:EntityKey",
+									"host": [
+										"{{beneficiaryUrl}}"
+									],
+									"path": [
+										"api",
+										"beneficiaries",
+										"payments",
+										":EntityKey"
+									],
+									"variable": [
+										{
+											"key": "EntityKey",
+											"value": "{{beneficiaryId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{beneficiaryUrl}}/api/beneficiaries/payments/:EntityKey",
+											"host": [
+												"{{beneficiaryUrl}}"
+											],
+											"path": [
+												"api",
+												"beneficiaries",
+												"payments",
+												":EntityKey"
+											],
+											"variable": [
+												{
+													"key": "EntityKey",
+													"value": "{{beneficiaryId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 30 Sep 2022 14:16:28 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "516"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"accountNumber\": \"123456789\",\n    \"bankName\": \"\",\n    \"branchCode\": \"632005\",\n    \"debitDay\": null,\n    \"debitMonth\": null,\n    \"trackingDays\": null,\n    \"accountType\": 0,\n    \"amount\": null,\n    \"clientCode\": \"PPPEA001\",\n    \"clientName\": \"Peach Payments Test\",\n    \"customerCode\": \"552\",\n    \"endDate\": null,\n    \"id\": \"186086208057099104099225095224043244050115043130\",\n    \"installments\": null,\n    \"isActive\": true,\n    \"name\": \"Alice Gleason\",\n    \"recurringPeriod\": 0,\n    \"reference\": \"1664546924\",\n    \"scheduleType\": 0,\n    \"serviceCode\": \"DEBORD\",\n    \"startDate\": null,\n    \"tokenHash\": \"6FC98B7BC60B502A1A694F571E87DBB28E404B4E\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "collections",
+					"item": [
+						{
+							"name": "Add Beneficiary",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"try {\r",
+											"\r",
+											"    if (pm.response.code == 200) {\r",
+											"        var jsonData = pm.response.json();\r",
+											"\r",
+											"        //from Add Beneficiary response\r",
+											"        pm.collectionVariables.set(\"beneficiaryId\", jsonData.id)\r",
+											"        pm.collectionVariables.set(\"beneficiaryToken\", jsonData.tokenHash)\r",
+											"    }\r",
+											"\r",
+											"} catch (e) { console.error(e) }"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"accountNumber\": \"123456789\",\n    \"amount\": null,\n    \"branchCode\": \"632005\",\n    \"clientCode\": \"PP{{clientCode}}\",\n    \"clientName\": \"{{clientName}}\",\n    \"customerCode\": \"{{$randomInt}}\",\n    \"id\": null,\n    \"isActive\": true,\n    \"name\": \"{{$randomFullName}}\",\n    \"reference\": \"{{$timestamp}}\",\n    \"scheculeType\": 0,\n    \"serviceCode\": \"DEBORD\"\n}"
+								},
+								"url": "{{beneficiaryUrl}}/api/beneficiaries/collections"
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"accountNumber\": \"123456789\",\n    \"amount\": null,\n    \"branchCode\": \"632005\",\n    \"clientCode\": \"PP{{clientCode}}\",\n    \"clientName\": \"{{clientName}}\",\n    \"customerCode\": \"{{$randomInt}}\",\n    \"id\": null,\n    \"isActive\": true,\n    \"name\": \"{{$randomFullName}}\",\n    \"reference\": \"{{$timestamp}}\",\n    \"scheculeType\": 0,\n    \"serviceCode\": \"DEBORD\"\n}"
+										},
+										"url": "{{beneficiaryUrl}}/api/beneficiaries/collections"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 30 Sep 2022 14:18:52 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "512"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"accountNumber\": \"123456789\",\n    \"bankName\": \"\",\n    \"branchCode\": \"632005\",\n    \"debitDay\": null,\n    \"debitMonth\": null,\n    \"trackingDays\": null,\n    \"accountType\": 0,\n    \"amount\": null,\n    \"clientCode\": \"PPPEA001\",\n    \"clientName\": \"Peach Payments Test\",\n    \"customerCode\": \"446\",\n    \"endDate\": null,\n    \"id\": \"254129158208240227110217072039065149150226103228\",\n    \"installments\": null,\n    \"isActive\": true,\n    \"name\": \"Sadie Fay\",\n    \"recurringPeriod\": 0,\n    \"reference\": \"1664547533\",\n    \"scheduleType\": 0,\n    \"serviceCode\": \"DEBORD\",\n    \"startDate\": null,\n    \"tokenHash\": \"88323133D30585DD7DEDF2585E317A45C1DE5D65\"\n}"
+								},
+								{
+									"name": "Validation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"accountNumber\": \"\",\n    \"amount\": null,\n    \"branchCode\": \"632005\",\n    \"clientCode\": \"PP{{clientCode}}\",\n    \"clientName\": \"{{clientName}}\",\n    \"customerCode\": \"{{$randomInt}}\",\n    \"id\": null,\n    \"isActive\": true,\n    \"name\": \"{{$randomFullName}}\",\n    \"reference\": \"{{$timestamp}}\",\n    \"scheculeType\": 0,\n    \"serviceCode\": \"DEBORD\"\n}"
+										},
+										"url": "{{beneficiaryUrl}}/api/beneficiaries/collections"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 30 Sep 2022 14:19:11 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "187"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"The request is invalid.\",\n    \"modelState\": {\n        \"accountNumber\": [\n            \"The Account number is required.\"\n        ],\n        \"beneficiary.CDVCheck\": [\n            \"The account number and branch code failed the CDV test.\"\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Search Beneficiary by Client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"try {\r",
+											"    var jsonData = pm.response.json();\r",
+											"\r",
+											"\r",
+											"} catch (e) { console.error(e) }"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{beneficiaryUrl}}/api/beneficiaries/collections/?client=PP{{clientCode}}&service={{serviceCode}}&page=1&pageSize=20",
+									"host": [
+										"{{beneficiaryUrl}}"
+									],
+									"path": [
+										"api",
+										"beneficiaries",
+										"collections",
+										""
+									],
+									"query": [
+										{
+											"key": "client",
+											"value": "PP{{clientCode}}"
+										},
+										{
+											"key": "service",
+											"value": "{{serviceCode}}",
+											"description": "DEBORD | PPREFTSAL | PPREFTCRE | PPREFTWAG"
+										},
+										{
+											"key": "query",
+											"value": "example",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{beneficiaryUrl}}/api/beneficiaries/collections/?client=PP{{clientCode}}&service={{serviceCode}}&page=1&pageSize=20",
+											"host": [
+												"{{beneficiaryUrl}}"
+											],
+											"path": [
+												"api",
+												"beneficiaries",
+												"collections",
+												""
+											],
+											"query": [
+												{
+													"key": "client",
+													"value": "PP{{clientCode}}"
+												},
+												{
+													"key": "service",
+													"value": "{{serviceCode}}",
+													"description": "DEBORD | PPREFTSAL | PPREFTCRE | PPREFTWAG"
+												},
+												{
+													"key": "query",
+													"value": "example",
+													"disabled": true
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "pageSize",
+													"value": "20"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 30 Sep 2022 14:19:31 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "11761"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"pageData\": {\n        \"nextPageNumber\": \"2\",\n        \"pageCount\": 13,\n        \"pageNumber\": 1,\n        \"pages\": [\n            {\n                \"cssClass\": \"currentPage\",\n                \"pageNumber\": \"1\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"2\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"3\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"4\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"5\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"6\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"7\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"8\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"9\",\n                \"pageUrl\": null\n            },\n            {\n                \"cssClass\": \"\",\n                \"pageNumber\": \"10\",\n                \"pageUrl\": null\n            }\n        ],\n        \"pageSize\": 20,\n        \"previousPageNumber\": null,\n        \"showNextPage\": true,\n        \"showPreviousPage\": false,\n        \"totalResults\": 257\n    },\n    \"results\": [\n        {\n            \"accountNumber\": \"1234567890\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"250655\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 100,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2006\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"236254171067071241144027185019132202029072112228\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2006\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"A9DB35243F9AECEF73A9205DB07D417539A93AB8\"\n        },\n        {\n            \"accountNumber\": \"1234567890\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"250655\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 100,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2006\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"075019012069185226108022125221224184225231191036\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2006\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"C5B99B4A7C4F6D45A52D23215659A8A303C6D0DA\"\n        },\n        {\n            \"accountNumber\": \"1234567890554\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 179.32,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2340\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"088017200204176240134170225240084040218191130156\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2340\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"ED77F906D4F9D76F1DDB216F517B6E65BDB3D873\"\n        },\n        {\n            \"accountNumber\": \"123456789044\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 179.32,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2340\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"078175090205244151226171022168082029045012059163\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2340\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"C483022692E6916303154B083BBDD1068DAEE51C\"\n        },\n        {\n            \"accountNumber\": \"1234567890345\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 179.32,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2340\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"138052183001073223158080069214056211032087050158\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2340\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"13A0B846563D3298D44CA0E2A4170AB6B6A5904E\"\n        },\n        {\n            \"accountNumber\": \"123456789044\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 179.32,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2340\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"254023057243032218007109255064205204133063223218\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2340\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"5ED0BAFA74FC4CC350EB4645970E876C73640AA6\"\n        },\n        {\n            \"accountNumber\": \"123456789044\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 179.32,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2340\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"177218205115063018168188238136060162018063090048\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2340\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"BD000447DFE18BB4AAC91F28B89DCC5CB9EBBBB3\"\n        },\n        {\n            \"accountNumber\": \"1234567890\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2516\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"166238014039191208117126016067150006240183052198\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2516\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"76BC72A80B7D6A15E13FB87DF0528AA8963CDDF7\"\n        },\n        {\n            \"accountNumber\": \"123456789011\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2533\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"211027017226187002064160199050212202054201046172\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2533\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"7F58FF01C1A031F408703F25F6C3797718E200DF\"\n        },\n        {\n            \"accountNumber\": \"123456789011\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2537\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"222040013025055213192039095046205075182156206000\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2537\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"C047FF66E79776DD7BD0A01448ABC1E579779C3C\"\n        },\n        {\n            \"accountNumber\": \"1234567890889\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 178.56,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2540\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"143236021191048057189140010173019163059129255046\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2540\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"C07FCA3030E54FE73DABDFCF7ED6B806A57E18BB\"\n        },\n        {\n            \"accountNumber\": \"1234567890889\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 178.56,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2540\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"182196163198250244173171033086216130042255077230\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2540\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"87E5356AC906E43F6D0FF8B645893AF9D66E6C0C\"\n        },\n        {\n            \"accountNumber\": \"1234567890889\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 178.56,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2540\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"038000218115088156068153065104230215051160045028\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2540\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"E866FC7A896DD4103B802D21F154A297CD7F4069\"\n        },\n        {\n            \"accountNumber\": \"123456789011\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2543\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"203124207247206119191038102023040198243178124121\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2543\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"6E62B30542114FA09035511D299EB308A1A72663\"\n        },\n        {\n            \"accountNumber\": \"123456789011\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2557\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"000250153221160222106193241132118210179089160013\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2557\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"95B5955971EAAB5E97E6D0B74CD0582FFD839382\"\n        },\n        {\n            \"accountNumber\": \"1323123224334\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 0,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2576\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"205032146181201006149088095165084112114164027001\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2576\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"47DD5AE4C63D02FB350C1B52BBCF158495C05335\"\n        },\n        {\n            \"accountNumber\": \"123456789011\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 288.89,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2588\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"009146150211164117041035170193107255003171184086\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2588\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"AC0BE1B7BC198B42A6FF6DE07AB03096DA70C30C\"\n        },\n        {\n            \"accountNumber\": \"123456789011\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 344.7,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2595\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"128113240237167055000236234231114077225025138238\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2595\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"80BC95980E9DAE8621637568C527534383FAC29C\"\n        },\n        {\n            \"accountNumber\": \"123456789011\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 168.58,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2648\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"204234044059255108101086246039227150233161233089\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2648\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"D8C9261F07592F8E1402A63BB477F1DAEDB81383\"\n        },\n        {\n            \"accountNumber\": \"123456789011\",\n            \"bankName\": \"FNB South Africa\",\n            \"branchCode\": \"254005\",\n            \"debitDay\": 1,\n            \"debitMonth\": 6,\n            \"trackingDays\": null,\n            \"accountType\": 0,\n            \"amount\": 168.58,\n            \"clientCode\": \"PPPEA001\",\n            \"clientName\": \"Peach Payments Test\",\n            \"customerCode\": \"2651\",\n            \"endDate\": \"2022-06-01T00:00:00\",\n            \"id\": \"069183155112096179012027197172133013188109155102\",\n            \"installments\": 2,\n            \"isActive\": true,\n            \"name\": \"2651\",\n            \"recurringPeriod\": 3,\n            \"reference\": \"SmartWill\",\n            \"scheduleType\": 1,\n            \"serviceCode\": \"DEBORD\",\n            \"startDate\": \"2020-06-01T00:00:00\",\n            \"tokenHash\": \"31DD321030105399E181C524AAB2E6B2D213E0B9\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Validation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{beneficiaryUrl}}/api/beneficiaries/collections/?client=PP{{clientCode}}&service=test&page=1&pageSize=20",
+											"host": [
+												"{{beneficiaryUrl}}"
+											],
+											"path": [
+												"api",
+												"beneficiaries",
+												"collections",
+												""
+											],
+											"query": [
+												{
+													"key": "client",
+													"value": "PP{{clientCode}}"
+												},
+												{
+													"key": "service",
+													"value": "test",
+													"description": "DEBORD | PPREFTSAL | PPREFTCRE | PPREFTWAG"
+												},
+												{
+													"key": "query",
+													"value": "example",
+													"disabled": true
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "pageSize",
+													"value": "20"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 30 Sep 2022 14:19:53 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "39"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Invalid service code test\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Search Beneficiary by ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"try {\r",
+											"    var jsonData = pm.response.json();\r",
+											"\r",
+											"\r",
+											"} catch (e) { console.error(e) }"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{beneficiaryUrl}}/api/beneficiaries/collections/:EntityKey",
+									"host": [
+										"{{beneficiaryUrl}}"
+									],
+									"path": [
+										"api",
+										"beneficiaries",
+										"collections",
+										":EntityKey"
+									],
+									"variable": [
+										{
+											"key": "EntityKey",
+											"value": "{{beneficiaryId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{beneficiaryUrl}}/api/beneficiaries/collections/:EntityKey",
+											"host": [
+												"{{beneficiaryUrl}}"
+											],
+											"path": [
+												"api",
+												"beneficiaries",
+												"collections",
+												":EntityKey"
+											],
+											"variable": [
+												{
+													"key": "EntityKey",
+													"value": "{{beneficiaryId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Microsoft-IIS/10.0"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Environment",
+											"value": "Test"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Channel",
+											"value": "Public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "X-Paysoft-Deployment-Version",
+											"value": "0.0.1276-public"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15768000"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "ARR/3.0"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 30 Sep 2022 14:20:13 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "512"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"accountNumber\": \"123456789\",\n    \"bankName\": \"\",\n    \"branchCode\": \"632005\",\n    \"debitDay\": null,\n    \"debitMonth\": null,\n    \"trackingDays\": null,\n    \"accountType\": 0,\n    \"amount\": null,\n    \"clientCode\": \"PPPEA001\",\n    \"clientName\": \"Peach Payments Test\",\n    \"customerCode\": \"446\",\n    \"endDate\": null,\n    \"id\": \"254129158208240227110217072039065149150226103228\",\n    \"installments\": null,\n    \"isActive\": true,\n    \"name\": \"Sadie Fay\",\n    \"recurringPeriod\": 0,\n    \"reference\": \"1664547533\",\n    \"scheduleType\": 0,\n    \"serviceCode\": \"DEBORD\",\n    \"startDate\": null,\n    \"tokenHash\": \"88323133D30585DD7DEDF2585E317A45C1DE5D65\"\n}"
+								}
+							]
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "{{accessToken}}"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"if (!pm.environment.name.includes(\"Payouts-Services-\")) {",
+					"    console.error(\"Invalid Environment selected - please select one of the following supported environments for this collection;\\n'Payouts-Services-Public'\");",
+					"    throw new Error(\"Invalid Project Environment Selected - please select one of the following supported environments for this collection;\\n'Payouts-Services-Public'\");",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "beneficiaryId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "beneficiaryToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

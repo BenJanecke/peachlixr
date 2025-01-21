@@ -54,9 +54,9 @@ defmodule PayoutsElixir.RequestBuilder do
     element(:APIPaymentsRequest, [
       build_header(params),
       element(:Payments, [
-        element(:FileContents, [
-          build_payment_details(params)
-        ])
+        for payment <- List.wrap(params.payments) do
+          element(:FileContents, build_payment_details(payment))
+        end
       ]),
       build_totals(params, :payment)
     ])
@@ -66,15 +66,15 @@ defmodule PayoutsElixir.RequestBuilder do
   defp build_header(params) do
     base = [
       element(:PsVer, "2.0.1"),
-      element(:Client, params.client_code),
-      element(:Reference, params[:reference] || generate_reference())
+      element(:Client, params.client_code)
     ]
 
     optional = [
-      callback_url: :CallBackUrl,
-      service: :Service,
-      service_type: :ServiceType,
-      due_date: :DueDate
+      {:callback_url, :CallbackUrl},
+      {:service, :Service},
+      {:service_type, :ServiceType},
+      {:due_date, :DueDate},
+      {:reference, :Reference}
     ]
     |> Enum.map(fn {key, xml_key} ->
       if params[key], do: element(xml_key, params[key])
@@ -110,14 +110,42 @@ defmodule PayoutsElixir.RequestBuilder do
 
   defp build_totals(params, type \\ nil) do
     base = [
-      element(:Records, 1),
-      element(:BranchHash, params.branch_code),
-      element(:AccountHash, params.account_number)
+      element(:Records, length(List.wrap(params[:payments] || [params]))),
+      element(:BranchHash, calculate_branch_hash(params)),
+      element(:AccountHash, calculate_account_hash(params))
     ]
 
-    amount = if type == :payment, do: [element(:Amount, params.amount)], else: []
+    amount = if type == :payment, do: [element(:Amount, calculate_total_amount(params))], else: []
 
     element(:Totals, base ++ amount)
+  end
+
+  defp calculate_branch_hash(params) do
+    params
+    |> get_all_records()
+    |> Enum.map(& &1.branch_code)
+    |> Enum.sum()
+    |> to_string()
+  end
+
+  defp calculate_account_hash(params) do
+    params
+    |> get_all_records()
+    |> Enum.map(& &1.account_number)
+    |> Enum.sum()
+    |> to_string()
+  end
+
+  defp calculate_total_amount(params) do
+    params
+    |> get_all_records()
+    |> Enum.map(& &1.amount)
+    |> Enum.sum()
+    |> to_string()
+  end
+
+  defp get_all_records(params) do
+    List.wrap(params[:payments] || [params])
   end
 
   defp generate_reference do

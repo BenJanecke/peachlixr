@@ -35,6 +35,7 @@ defmodule PayoutsElixir.ResponseParser do
       result: ~x"./Result/text()"s,
       batch_code: ~x"./BatchCode/text()"s,
       fee: ~x"./TotalFeeExcludingVAT/text()"s,
+      unique_id: ~x"./UniqueId/text()"s,
       banv_realtime_result: [
         ~x"./BanvRealtimeResult",
         account_number: ~x"./AccountNumber/text()"s,
@@ -44,7 +45,8 @@ defmodule PayoutsElixir.ResponseParser do
         initials: ~x"./Initials/text()"s,
         name: ~x"./Name/text()"s,
         reference: ~x"./Reference/text()"s,
-        result: ~x"./Result/text()"s
+        result: ~x"./Result/text()"s,
+        result_message: ~x"./ResultMessage/text()"o
       ],
       cdv_results: [
         ~x"./CDVResults/Result"l,
@@ -52,7 +54,8 @@ defmodule PayoutsElixir.ResponseParser do
         branch_code: ~x"./BranchCode/text()"s,
         customer_code: ~x"./CustomerCode/text()"s,
         reference: ~x"./Reference/text()"s,
-        result: ~x"./Result/text()"s
+        result: ~x"./Result/text()"s,
+        message: ~x"./Message/text()"o
       ]
     )
   end
@@ -84,8 +87,20 @@ defmodule PayoutsElixir.ResponseParser do
         ~x"./PaymentResults/Result"l,
         account_number: ~x"./AccountNumber/text()"s,
         branch_code: ~x"./BranchCode/text()"s,
+        first_name: ~x"./FirstName/text()"s,
+        surname: ~x"./Surname/text()"s,
+        reference: ~x"./Reference/text()"s,
+        customer_code: ~x"./CustomerCode/text()"s,
         result: ~x"./Result/text()"s,
         result_message: ~x"./ResultMessage/text()"s
+      ],
+      cdv_results: [
+        ~x"./CDVResults/Result"l,
+        account_number: ~x"./AccountNumber/text()"s,
+        branch_code: ~x"./BranchCode/text()"s,
+        customer_code: ~x"./CustomerCode/text()"s,
+        reference: ~x"./Reference/text()"s,
+        result: ~x"./Result/text()"s
       ]
     )
   end

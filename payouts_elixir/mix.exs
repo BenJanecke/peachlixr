@@ -20,7 +20,9 @@ defmodule PayoutsElixir.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.8"},
-      {:jason, "~> 1.2"}
+      {:jason, "~> 1.2"},
+      {:xml_builder, "~> 2.2"},
+      {:sweet_xml, "~> 0.7.1"}
     ]
   end
 end
